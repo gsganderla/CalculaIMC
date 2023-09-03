@@ -20,7 +20,14 @@ export default styles = StyleSheet.create({
     section: {
       flexDirection: 'row',
       justifyContent: 'center',
-      width: '100%'
+      width: '100%',
+      height: '25%'
+    },
+    sectionButton: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '100%',
+      height: '20%'
     },
     form: {
       width: '50%',
@@ -57,14 +64,30 @@ export default styles = StyleSheet.create({
     },
     assection: {
       width: '100%',
-      height: '30%',
-      backgroundColor: 'white'
+      height: '35%',
+      backgroundColor: 'white',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: '10'
+
     },
     textResultado: {
       color: '#967ADC',
       textAlign: 'center',
       justifyContent: 'center',
-      fontSize: 24
+      fontSize: 24,
+      fontWeight: "bold"
+    },
+    textIndex: {
+      color: '#967ADC',
+      fontSize: 14,
+    },
+    textUNIPAR: {
+      color: 'white',
+      textAlign: 'center',
+      fontSize: 24,
+      justifyContent: 'center',
+      fontWeight: "bold"
     }
-  
+
   })

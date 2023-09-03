@@ -1,7 +1,6 @@
-import { FlatList, Text, TextInput, TouchableOpacity, View } from "react-native"
+import { Text, TextInput, TouchableOpacity, View } from "react-native"
 import styles from "./styles"
 import { useState } from "react";
-import { ApplyResult } from "../../componentes/applyText";
 
 export function Home() {
 
@@ -16,7 +15,7 @@ export function Home() {
 
     if (result < 18.5) { setText('Abaixo do peso') } 
     if (result >= 18.5 && result < 24.9) { setText('Peso normal')  } 
-    if (result >= 25 && result < 29.9) { setText('Sobre peso') }  
+    if (result >= 25 && result < 29.9) { setText('Sobrepeso') }  
     if (result >= 30 && result < 34.9) { setText('Obesidade grau 1') } 
     if (result >= 35 && result < 39.9) { setText('Obesidade grau 2') } 
     if (result >= 40) { setText('Obesidade grau 3') }
@@ -41,25 +40,18 @@ export function Home() {
 
       </View>
 
-      <View style={styles.section}>
+      <View style={styles.sectionButton}>
         <TouchableOpacity style={styles.button} onPress={setResult}>
         <Text style={styles.textButton}>CALCULAR</Text>
         </TouchableOpacity>
       </View>
 
       <View style={styles.assection}>
-      <FlatList
-      data={textResult}
-      keyExtractor={textResult => textResult}
-      renderItem={ ({item}) =>  (
-        <ApplyResult name= {item} 
-            key= {item}/>
-        )} 
-      ListEmptyComponent={() => 
-      <Text style={styles.textResultado}>Calcule os valores para o resultado!</Text>
-      }
-    />
+        <Text style={styles.textIndex}>Seu indice de massa corporal é: {result.toFixed(2)}</Text>
+        <Text style={styles.textResultado}>{textResult}</Text>
       </View>
+      <Text style={styles.textUNIPAR}>UNIPAR</Text>
     </View>
+    
     )
 }
